@@ -1,0 +1,290 @@
+{
+	"info": {
+		"_postman_id": "438beeb0-c852-4617-9bfb-9c659d0e0c89",
+		"name": "OTP_collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "43885970",
+		"_collection_link": "https://maria-1736261.postman.co/workspace/Maria's-Workspace~8f311d3f-af52-4176-8aec-c45bdaf804bf/collection/43885970-438beeb0-c852-4617-9bfb-9c659d0e0c89?action=share&source=collection_link&creator=43885970"
+	},
+	"item": [
+		{
+			"name": "Изменение конфигурации OTP-кодов",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlNWI0NGEyMi1hMmE4LTRmZWEtOTQzMC05NzYxYzQ0MmMwMWYiLCJyb2xlIjoiYWRtaW4iLCJuYW1lIjoibWFzaGEiLCJpc3MiOiJvdHBfY29kZXMiLCJleHAiOjE3NDQxNDEyNTh9.3PTJEwzw_lGwK2Js_6Q81aSm24lFPtsgPA1kW9FE4tU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"length\": 10,\r\n  \"lifetime\": 60\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/admin/otp_config_edit",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"admin",
+						"otp_config_edit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Совершение транзакции",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI0ZmMwMGRiNi00Yzc5LTQ1MjUtOGZlYS1iOWViMjY4ZDE4ZmYiLCJyb2xlIjoiYWRtaW4iLCJuYW1lIjoibWFzaGEiLCJpc3MiOiJvdHBfY29kZXMiLCJleHAiOjE3NDQxNTM3ODd9.xkf5QChcumbviNFVqho1y4Pug6XyhChq5bnyw01QqGM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"amount\": 89,\r\n  \"purchase\": \"shop\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/user/make_transaction",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"make_transaction"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Генерация OTP-кодов",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI0ZmMwMGRiNi00Yzc5LTQ1MjUtOGZlYS1iOWViMjY4ZDE4ZmYiLCJyb2xlIjoiYWRtaW4iLCJuYW1lIjoibWFzaGEiLCJpc3MiOiJvdHBfY29kZXMiLCJleHAiOjE3NDQxNTM3ODd9.xkf5QChcumbviNFVqho1y4Pug6XyhChq5bnyw01QqGM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"transactionId\": \"c64b4b05-3221-4636-b26a-4acfa141f4bb\",\r\n  \"saveToFileOTP\": true,\r\n   \"sendOTP\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/user/generate_otp",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"generate_otp"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Удаление пользователей",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI0OGZhNDI1YS1lZTg3LTQ2MTgtYWU4NC0zNmE2NjZmMGUwZjEiLCJyb2xlIjoidXNlciIsIm5hbWUiOiJkYXNoYSIsImlzcyI6Im90cF9jb2RlcyIsImV4cCI6MTc0NDE0NDA3M30.LjvGjcEgm-v41tccIArVofwCCR4fvndf2ltg8jdj90A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"usernames\": [\"vasha\", \"avasha\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/admin/delete_users",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"admin",
+						"delete_users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Получение пользователей",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI0OGZhNDI1YS1lZTg3LTQ2MTgtYWU4NC0zNmE2NjZmMGUwZjEiLCJyb2xlIjoidXNlciIsIm5hbWUiOiJkYXNoYSIsImlzcyI6Im90cF9jb2RlcyIsImV4cCI6MTc0NDE0MTQzM30.u-JVtP4mPSx6JIlqLz4lxKSjJ1u0XEU_wX0aK8mbtTQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/admin/users",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"admin",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Логин",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"masha\",\r\n    \"password\": \"123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/login",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Регистрация",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"aaamasha\",\r\n    \"password\": \"123\",\r\n    \"admin\": false,\r\n    \"phoneNumber\":\"+79824134410\",\r\n    \"email\":\"girlfaarombaikal@gmail.com\",\r\n    \"telegramUsername\":\"gaaumaan91\"\r\n\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/register",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Валидация OTP-кода",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI0ZmMwMGRiNi00Yzc5LTQ1MjUtOGZlYS1iOWViMjY4ZDE4ZmYiLCJyb2xlIjoiYWRtaW4iLCJuYW1lIjoibWFzaGEiLCJpc3MiOiJvdHBfY29kZXMiLCJleHAiOjE3NDQxNTM3ODd9.xkf5QChcumbviNFVqho1y4Pug6XyhChq5bnyw01QqGM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"code\": \"3797064349\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/user/validate_otp",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"validate_otp"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
